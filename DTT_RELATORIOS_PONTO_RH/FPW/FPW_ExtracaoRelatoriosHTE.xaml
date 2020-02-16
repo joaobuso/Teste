@@ -1,0 +1,484 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="FPW_ExtracaoRelatorios"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_FileHE" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>FPW_ExtracaoRelatorios_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="FPW_ExtracaoRelatorios" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="int_count" />
+    </Sequence.Variables>
+    <ui:Click DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Aba Outros" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target Element="{x:Null}" InformativeScreenshot="a610f68a80f5009c266fa8d0ad5b6e96" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;" WaitForReady="COMPLETE">
+          <ui:Target.ClippingRegion>
+            <ui:Region Rectangle="900, 412, 56, 17" />
+          </ui:Target.ClippingRegion>
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" DisplayName="On Element Appear 'gg-client.exe  FPw Ponto'" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_3" RepeatForever="False" WaitActive="False" WaitVisible="False">
+      <ui:OnUiElementAppear.Body>
+        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'gg-client.exe  FPw Ponto'" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="14d3870f75c6f025f9a6e65b056e264e" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:WindowScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <ui:Click SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DelayMS="1000" DisplayName="Click 'gg-client.exe  FPw Ponto'" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="4bdc2278ad6ddadd131594405c8f6051" WaitForReady="COMPLETE">
+                        <ui:Target.ClippingRegion>
+                          <ui:Region Rectangle="71, 35, 47, 12" />
+                        </ui:Target.ClippingRegion>
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:SendHotkey DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="2000" DisplayName="Send hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="a" KeyModifiers="None" SendWindowMessages="True" SpecialKey="False">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </ActivityAction>
+            </ui:WindowScope.Body>
+          </ui:WindowScope>
+        </Sequence>
+      </ui:OnUiElementAppear.Body>
+      <ui:OnUiElementAppear.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="14d3870f75c6f025f9a6e65b056e264e" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;" TimeoutMS="50000" WaitForReady="COMPLETE" />
+      </ui:OnUiElementAppear.Target>
+    </ui:OnUiElementAppear>
+    <Sequence DisplayName="Filtros Relatorio 1" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into Data Inicial" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[&quot;01&quot; &amp; date.Now.ToString(&quot;MMyyyy&quot;) + &quot;[k(tab)]&quot;]">
+        <ui:TypeInto.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="d2353a5b973bb18fd292ad46dd893b03" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="456, 181, 58, 10" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into Data Final" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[date.Now.ToString(&quot;ddMMyyyy&quot;) + &quot;[k(tab)]&quot;]">
+        <ui:TypeInto.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="380c41d3b389f4c81cf34432b5a279fe" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="574, 181, 59, 11" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click CSV (Excel)" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="0d4cf7d1bb2f9c3c8bffc09aae11441b" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="452, 376, 4, 6" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Coletivo" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="4297ec95c3c937fe2a86d77bc99252c3" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="564, 255, 3, 2" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+    <Sequence DisplayName="Click no Check">
+      <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click Horas Excedentes" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="041fef425dc3d0c330b81bea4dd2efeb" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="763, 183, 6, 6" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+        <sap2010:WorkflowViewState.IdRef>Click_30</sap2010:WorkflowViewState.IdRef>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Horas Excedentes Dias Normais" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="5793c3a190e476ff27bd856e4010d530" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="762, 213, 7, 7" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+        <sap2010:WorkflowViewState.IdRef>Click_31</sap2010:WorkflowViewState.IdRef>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Exibir Apenas Diferenças" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="a9e64c3d6342712377104158b4f1c2bf" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="762, 262, 7, 6" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+        <sap2010:WorkflowViewState.IdRef>Click_32</sap2010:WorkflowViewState.IdRef>
+      </ui:Click>
+      <sap2010:WorkflowViewState.IdRef>Sequence_18</sap2010:WorkflowViewState.IdRef>
+    </Sequence>
+    <Sequence DisplayName="Salvar relatório 1" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Emitir" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="6020a29fe69f56fa564cb97c8aad8693" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='FPw Ponto' /&gt;">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="754, 413, 57, 16" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into Nome Arquivo" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[&quot;M:\Temp\HorasTrabalhadasExcedentes.csv&quot; + &quot;[k(enter)]&quot;]">
+        <ui:TypeInto.Target>
+          <ui:Target Element="{x:Null}" InformativeScreenshot="db9df4f62f56c5f728218801256560bf" Selector="&lt;wnd app='gg-client.exe' cls='DisplayClientWindowClass' title='Save As' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.ClippingRegion>
+              <ui:Region Rectangle="211, 363, 103, 14" />
+            </ui:Target.ClippingRegion>
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+          </ui:Target>
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+    </Sequence>
+    <Sequence DisplayName="Validação do Download Horas Trabalhadas Excedentes" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <ui:PathExists DisplayName="Path Exists" Exists="[out_FileHE]" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Temp\HorasTrabalhadasExcedentes.csv" PathType="File" />
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[int_count]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+        </Assign.Value>
+      </Assign>
+      <DoWhile DisplayName="Do While" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[out_FileHE = false AND int_count &lt; 100]">
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <ui:PathExists DisplayName="Path Exists" Exists="[out_FileHE]" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="C:\Temp\HorasTrabalhadasExcedentes.csv" PathType="File" />
+          <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <Assign sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[int_count]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[int_count + 1]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </DoWhile>
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[int_count]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[nothing]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>d19DOlxVc2Vyc1xycGEtdWlwYXRoc2VydmljZXM4XERlc2t0b3BcRFRUX1JFTEFUT1JJT1NfUE9OVE9fUkhcRlBXXEZQV19FeHRyYWNhb1JlbGF0b3Jpb3NIVEUueGFtbIkBRQPOAg4CAQFJBV4QAwGMAV8FkQEcAgFvkgEFzwEQAgFO0AEFiwIQAgExjAIFqwIQAgEfrAIFzAIQAgECSe8BSfkBAwGSAVVpVb0BAwGRAUl+SYQBAwGQAUlnSXUDAY8BVcsBVdUBAwGOAUncAUniAQMBjQFf4AFf5wECAXJf9AFf+wECAXFhCYwBFAIBd1/NAV/UAQIBc48BgwGPAdcBAgF1jwHiAY8B6QECAXaPAfcBjwGBAgIBdJMBB54BFQIBaJ8BB6oBFQIBYasBB7wBEgIBWL0BB84BEgIBT9EBB+MBEgIBROQBB/YBEgIBO/cBB4kCEgIBMo0CB54CEgIBJ58CB6oCFQIBIK0CB60CtQECARuuAge1AhACARe2AgfDAhECAQfEAgfLAhACAQNiC4sBHAIBeJUBa5UBvwECAW6VAc0BlQHXAQIBbZMBogKTAfcCAgFskwGyAZMBuAECAWuTAZkBkwGfAQIBapMB6QGTAe8BAgFpoQFroQG/AQIBZ6EBzQGhAdcBAgFmnwGgAp8B4gICAWWfAbIBnwG4AQIBZJ8BmQGfAZ8BAgFjnwHnAZ8B7QECAWKrAb8BqwHJAQIBYLABa7ABvwECAV+rAUWrAVMCAV6tATKtATUCAV2rAfMBqwH6AQIBXK0BJq0BKQIBW6sBrAGrAbIBAgFaqwHdAasB5AECAVm9AbwBvQHGAQIBV8IBa8IBvwECAVa9AUW9AVMCAVW/ATK/ATUCAVS9AfABvQH3AQIBU78BJr8BKQIBUr0BqQG9Aa8BAgFRvQHaAb0B4QECAVDRAZUB0QGfAQIBTdYBa9YBvwECAUzRAUnRAU8CAUvRATLRAUACAUrTATLTATUCAUnRAckB0QHQAQIBSNMBJtMBKQIBR9EBggHRAYgBAgFG0QGzAdEBugECAUXkAaYB5AGwAQIBQ+kBa+kBvwECAULkAUXkAVMCAUHmATLmATUCAUDkAdoB5AHhAQIBP+YBJuYBKQIBPuQBkwHkAZkBAgE95AHEAeQBywECATz3AaEB9wGrAQIBOvwBa/wBvwECATn3AUX3AVMCATj5ATL5ATUCATf3AdUB9wHcAQIBNvkBJvkBKQIBNfcBjgH3AZQBAgE09wG/AfcBxgECATONArYBjQLAAQIBMJICa5ICvwECAS+NAkmNAk8CAS6NAjKNAkACAS2PAjKPAjUCASyNAuoBjQLxAQIBK48CJo8CKQIBKo0CowGNAqkBAgEpjQLUAY0C2wECASihAmuhAr0BAgEmoQLLAaEC1QECASWfAqICnwLxAgIBJJ8CsgGfArgBAgEjnwKZAZ8CnwECASKfAukBnwLvAQIBIa0CN60CRQIBHa0Ceq0CogECARyzAjGzAjICARqwAjKwAj0CARi2Al22AooBAgEUtwIJwgIUAgEIyQIxyQI6AgEGxgIyxgI9AgEEYp8CYvMCAwGLAWgRiAEcAgF5uAILuAK5AQIBELkCC7kCUgIBDroCC8ECFAIBCWkTfh4DAYQBfxOHASMCAXq4Aju4AkkCARK4An64AqYBAgERuQIbuQIlAgEPvwI1vwJEAgEMvAI2vAJBAgEKaYgCaZICAwGKAWmIAWmOAQMBiQFpXmlsAwGIAXWPAXWZAQMBhwFp9QFp+wEDAYYBaXlpfwMBhQF/qwJ/sgIDAYMBgQFwgQF6AwGCAX9zf3oDAYEBf/8Bf4UCAwGAAX9af2ACAX9/hwF/jQECAX5/mQJ/nwICAX1/swF/ugECAXx/7gF/8QECAXs=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Click_14" sap:VirtualizedContainerService.HintSize="486,106" />
+      <sap2010:ViewStateData Id="Click_6" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="SendHotkey_5" sap:VirtualizedContainerService.HintSize="314,116">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="336,386">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WindowScope_4" sap:VirtualizedContainerService.HintSize="414,532" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="436,656">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OnUiElementAppear_3" sap:VirtualizedContainerService.HintSize="486,832">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TypeInto_4" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="TypeInto_5" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Click_15" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_16" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="486,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_30" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_31" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_32" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_18" sap:VirtualizedContainerService.HintSize="486,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_13" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="314,134">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="486,404">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PathExists_1" sap:VirtualizedContainerService.HintSize="464,89" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="PathExists_3" sap:VirtualizedContainerService.HintSize="314,89" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="336,375">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="464,537" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="486,990">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="508,2758">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FPW_ExtracaoRelatorios_1" sap:VirtualizedContainerService.HintSize="548,2838" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

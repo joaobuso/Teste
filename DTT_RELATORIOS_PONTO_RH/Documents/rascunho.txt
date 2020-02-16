@@ -1,0 +1,20 @@
+
+\\brspgtfs\PONTO MÓVEL
+\\10.127.172.137
+ATRAME\brrobobps
+Segu@19_it
+\\BRSPGTFS\RH Operacional TAX\PONTO MÓVEL\
+\\10.127.172.137\RH Operacional TAX\PONTO MÓVEL\
+
+Sistema Norber
+Usuário: 500
+Senha: dtt.123
+
+\\10.127.20.148 - servidor Dtt
+
+ggw.dtonet.com.br:4918
+
+login: jbuso
+senha: Usr034368#
+
+ggw.dtonet.com.br:4914
